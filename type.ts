@@ -114,7 +114,7 @@ console.log(number5);
 let splices= number5.splice(0,3);
 console.log(splices);
 console.log(`${number5} after splice`);
-console.log(number5);                        */
+console.log(number5);                        
 
 
 //!array.map((element, index, array) => {
@@ -131,7 +131,103 @@ console.log(newArray);
 
 const obj:any= {a:1,b:2,c:3,d:4};
 const entries =Object.entries(obj);
-console.log(entries);
+console.log(entries);       */
 
-console.log(entries)
+
+const users = [
+  {
+      id: 1,
+      name: "Alice",
+      role: "Developer",
+      projects: [
+          {
+              projectId: 101,
+              projectName: "Website Redesign",
+              tasks: [
+                  {
+                      taskId: 1001,
+                      taskName: "Design Homepage",
+                      status: "In Progress",
+                      comments: [
+                          { commentId: 5001, text: "Initial draft looks good", author: "Alice" },
+                          { commentId: 5002, text: "Needs more color options", author: "Bob" }
+                      ]
+                  },
+                  {
+                      taskId: 1002,
+                      taskName: "Set up backend",
+                      status: "Completed",
+                      comments: [{ commentId: 5003, text: "Deployed to production", author: "Alice" }]
+                  }
+              ]
+          },
+          {
+              projectId: 102,
+              projectName: "Mobile App",
+              tasks: [
+                  {
+                      taskId: 1003,
+                      taskName: "Create Login Screen",
+                      status: "Not Started",
+                      comments: []
+                  }
+              ]
+          }
+      ]
+  },
+  {
+      id: 2,
+      name: "Bob",
+      role: "Designer",
+      projects: [
+          {
+              projectId: 103,
+              projectName: "Brand Identity",
+              tasks: [
+                  {
+                      taskId: 1004,
+                      taskName: "Logo Design",
+                      status: "Completed",
+                      comments: [
+                          { commentId: 5004, text: "Client approved", author: "Bob" },
+                          { commentId: 5005, text: "Final files sent", author: "Alice" }
+                      ]
+                  },
+                  {
+                      taskId: 1005,
+                      taskName: "Color Palette",
+                      status: "In Progress",
+                      comments: [{ commentId: 5006, text: "Working on new variations", author: "Bob" }]
+                  }
+              ]
+          }
+      ]
+  }
+];
+
+users.map((item,index)=>{
+  console.log(item)
+
+})
+
+const aliceProject = users.find(user => 
+  user.projects.some(project => project.projectName === "Website Redesign")
+);
+console.log(aliceProject);
+
+const bob = users.find(users=> users.projects.some(projects=>projects.projectName==="Brand Identity"));
+
+console.log(bob);
+const allTasks = users.flatMap(user => user.projects.flatMap(project => project.tasks.map(task => task.taskName)));
+console.log("All Tasks:", allTasks);
+
+
+const comment = users.flatMap(user => user.projects.flatMap(project => project.tasks.flatMap(tasks =>tasks.comments .map(item=>item.commentId))));
+
+console.log("All Comments:", comment);
+
+const roles = users.map(user => user.role);
+console.log("Roles:", roles);
+
+
 
