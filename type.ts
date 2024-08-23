@@ -131,7 +131,7 @@ console.log(newArray);
 
 const obj:any= {a:1,b:2,c:3,d:4};
 const entries =Object.entries(obj);
-console.log(entries);       */
+console.log(entries);       
 
 
 const users = [
@@ -228,6 +228,35 @@ console.log("All Comments:", comment);
 
 const roles = users.map(user => user.role);
 console.log("Roles:", roles);
+
+
+
+
+
+
+//Functions can also have optional parameters using ? and default parameters values
+
+
+
+function greet(name:string ,greeting?:string):void{
+  if(greeting){
+    console.log(`hello ${name} ,${greeting}`);
+
+  }else {
+    console.log(`hello ${name}`);
+  }
+
+
+}
+greet("coders")
+greet("coders, good morning")
+
+
+const fun = (name :string):void=>{
+  console.log(`hello ${name}`);
+
+}
+fun("hey i am coding right now typescript")   */
 
 
 
