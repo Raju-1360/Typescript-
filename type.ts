@@ -280,7 +280,7 @@ num("hey i am learning and coding hope you enjoy it :")
 
 
 
-*/
+
 
 
 
@@ -381,4 +381,90 @@ function VoidFunction():void{
   console.log("i am void function")
 }
 
-VoidFunction()
+VoidFunction()     
+
+
+//? Interface
+ /*TypeScript interfaces provide a powerful
+way to define object structures and
+ensure type safety.
+Interfaces define the structure of an
+object by specifying the names and types
+of its properties.
+We declare an interface using the
+interface keyword in a .ts file. You can also
+create interface inside your component
+file with .tsx extension  */
+
+
+interface Person{
+  name :string,
+  age :number,
+  address ? :any
+}
+
+interface Address{
+  city?: string,
+  pinCode ? :string
+}
+
+type information  =Person & Address;
+let Object1 :Person ={
+  name :"hey you are looking at github ..!",
+  age: 45,
+}
+
+let fullData :information={
+  name:"Hey i am Interface",
+  age:452,
+
+  
+}
+
+
+console.log(Object1)
+console.log(Object1.name)
+console.log(Object1.age)
+
+console.log(fullData)
+// ? Destructor 
+let d=(Object.keys(Object1))
+console.log((Object.values(Object1)))
+
+ let [nameKey ,ageKey]=d;
+ console.log(nameKey,ageKey);
+
+ let Values =Object.values(Object1);
+ let [firstValues]=Values;
+ console.log(firstValues);
+
+ let object3: any={ name:"object ", age:45}
+
+for(const key in object3){
+  if(object3.hasOwnProperty(key)){
+    console.log(`${key}: ${object3[key]}`);
+    console.log(Object.keys(object3));
+  }
+
+}
+
+const keyArr = Object.keys(object3).map((key)=>key);
+
+console.log(keyArr);
+
+
+// Read only 
+
+interface DATA{
+  readonly id :number,
+  readonly no ? :number
+
+  
+}
+
+const data :DATA={
+  id :45225
+}
+
+console.log(data);
+
