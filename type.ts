@@ -394,7 +394,7 @@ of its properties.
 We declare an interface using the
 interface keyword in a .ts file. You can also
 create interface inside your component
-file with .tsx extension  */
+file with .tsx extension  
 
 
 interface Person{
@@ -467,4 +467,72 @@ const data :DATA={
 }
 
 console.log(data);
+   */
+
+
+//! Function type interface 
+
+/* Interfaces can define the shape of a
+function, including parameter types and
+return type  */
+
+interface ADD{
+  ( a :number,b:number):number;
+
+
+}
+const add :ADD=(x,y)=>x+y;
+console.log(add(5,6));
+
+
+interface My_fun{
+  (name:string, age ? :number):void
+}
+
+const my :My_fun=(name ,age)=>{
+
+  if(age===undefined){ age =45}
+  console.log(`${name} and ${age}`) 
+}
+console.log(my("coder"))
+
+
+
+//Extending
+
+/* Interfaces can extend other interfaces,
+inheriting their properties and adding new
+ones. */
+
+interface pen{
+  price:string
+}
+
+interface note extends pen{
+  pages:number
+}
+const buyer: note={
+  price:"100",
+  pages:100
+}
+console.log(buyer)
+
+//!Classes can implement interfaces,ensuring they adhere to the defined structure.
+
+interface print{
+  display():void
+}
+class MyClass implements print{
+  display(): string {
+    return "i am printing";
+  }
+
+
+
+}
+
+
+const obj = new MyClass();
+console.log(obj.display());
+
 
