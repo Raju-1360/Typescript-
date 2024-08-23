@@ -131,7 +131,7 @@ console.log(newArray);
 
 const obj:any= {a:1,b:2,c:3,d:4};
 const entries =Object.entries(obj);
-console.log(entries);       
+console.log(entries);     
 
 
 const users = [
@@ -230,7 +230,10 @@ const roles = users.map(user => user.role);
 console.log("Roles:", roles);
 
 
+let a =users.find(item=>item.role ==="Designer");
+console.log("a:", a);      
 
+     
 
 
 
@@ -256,7 +259,126 @@ const fun = (name :string):void=>{
   console.log(`hello ${name}`);
 
 }
-fun("hey i am coding right now typescript")   */
+fun("hey i am coding right now typescript")   
+
+
+//? Union 
+
+// union types combines multiples types allowing a values to have a different  possible types 
+
+let values :string | number =45;
+console.log(values)
+let a :(number | string )[]=[1,2,3,4,"five"];
+console.log(a);
+
+function num(number :string|number):void{
+  console.log(number)
+}
+
+
+num("hey i am learning and coding hope you enjoy it :")
 
 
 
+*/
+
+
+
+
+
+//?Type keyword
+//creating a  custom types: the type keyword allow creating types aliases for custom types
+
+type age =number;
+let number :age = 45;
+console.log(number);
+
+type Name =string ;
+let names :Name ="Coder";
+console.log(names);
+
+type Numbers =number[];
+let d :Numbers =[1,2,3,4];
+console.log(d)
+
+
+
+
+
+
+
+
+// ? Intersection  
+
+
+// Intersection types (&): combine multiple types ,requiring a values to have all specific types
+
+type person={name:string,age:number};
+type employee ={id: number,department?:string};
+
+
+type details = person & employee;
+
+const Employee : details ={
+  name :"coder",
+  age: 45,
+  id:452,
+ 
+}  
+
+console.log(Employee)
+
+
+//Special  types :- typescript has special types that may not refer to any specific type of data 
+
+//these are special types ar any,unknown , and never an other like void, null and undefined 
+
+
+
+let data :any ={name :"coder"};
+console.log(data);
+
+
+
+// The unknown type represents a value whose type is unknown at compile time 
+
+
+// variables of type unknown can hold values of any type but required type of checking or assertions for safe usage .
+
+let values:unknown ="unknown value do you know me ?";
+values =5;// here reassign values to .. yes i know you he he
+console.log(values);
+
+
+
+//? never never return values or functions 
+
+//The never keyword in TypeScript is used to indicate that a function will never return anything. Typically, it's used for functions that always throw an error or have an infinite loop.
+
+// let sum :number =4;
+
+// function Fun():never{
+//   while(true){
+//   console.log("error")
+  
+
+//   }
+// }
+
+
+
+//? The void type represents the absence of any type in typescript .
+
+
+let Void :void 
+console.log(Void)//
+
+//it mostly used in function that never return the values 
+
+
+function VoidFunction():void{
+
+  console.log("i am void function")
+}
+
+VoidFunction()
