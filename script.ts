@@ -290,3 +290,81 @@ enum Direction {
  
 
   */
+
+
+  //! Type Guard 
+
+  /*A type guard in TypeScript is a mechanism to narrow down the type of a variable within a conditional block. It helps ensure that TypeScript understands what type a variable is, allowing you to safely access its properties and methods.  */
+
+
+  //    CODE START HERE  Typeof 
+
+  /* 
+let Guard :string ="Guard";
+
+
+if(typeof Guard === "string"){
+    console.log(Guard.length)
+}
+
+function Guards( x:number,y:number):number{
+    if(typeof x === "number"  && typeof y === "number"){
+
+         return x+y;
+       
+    }
+    else {
+        console.log(`Invalid operation: ${x} and ${y}`)
+    }
+    return 0;
+
+
+}
+console.log(Guards(4,5))    */
+
+
+//Instance of Type Guard
+/*
+
+let arr:number[] = [1,2,3,4];
+
+if(arr instanceof Array){
+    arr.push(5)
+}
+console.log( arr)
+
+
+interface Person{
+    name:string,
+    age :45
+}
+let person :Person={ 
+
+    name : 'John', age :45
+
+}
+
+if(person instanceof Object){
+    console.log(person.name)
+}   */
+
+
+    //Type in 
+
+/*
+    type dog ={ name:string, bark:()=>void}
+    type cat ={ name:string, meow:()=>void}
+
+    function makeSound(animal : dog | cat){
+        if("bark" in animal){
+            animal.bark();
+        }else {
+            animal.meow();
+        }
+    }
+
+    const mydog = {name :"buddy",bark:()=>console.log("woof!")};
+    const mycat = {name :"Whiskers",meow:()=>console.log("meow!")};
+    console.log(mydog);
+makeSound(mydog);    
+  END   */
