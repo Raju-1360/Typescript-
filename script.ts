@@ -62,3 +62,99 @@ End */
 /*--------------------------------------*/
 
 
+//! ASSERTION
+
+/* Notes:-
+Type assertion allows you to override the
+inferred type of a variable
+
+type assertions do not have any runtime
+impact and are purely for compile-time
+type checking.
+
+They provide hints to the compiler on how
+we want our code to be analyzed.
+They allow us to override the inferred
+type and explicitly specify the desired
+type.
+Type assertions are particularly useful
+when working with union types or
+dynamically typed values.
+TypeScript provides two ways to do Type
+Assertion.
+Using Angular Bracket (<>)
+Using "as" keyword
+?Assertion in TypeScript is used to tell the compiler to treat a value as a specific type.
+?It doesn't change the runtime value but helps with type checking during development
+
+*/
+
+
+/*--------------- */
+
+
+/*     🔥CODE START🔥     
+
+
+let x= 45 as number;
+console.log(x);
+let y =<string> "four";
+console.log(y);
+
+
+function Assertion ( x: any , y :string):void{
+    console.log((x as string) +y);
+    
+}
+let z= Assertion ("Hello", "coder");
+console.log(z);
+
+let Names ="ASSERTION";
+
+let lgth =(<string>Names).length;
+let lgth2= (Names as string).length
+console.log(lgth);
+console.log(lgth2);
+
+
+🐱‍🏍*/
+
+
+
+
+
+
+
+//! Const Assertion 
+
+/* Const assertion is a feature in TypeScript
+that allows you to specify that a variable
+should have a literal type.
+It provides a way to enforce immutability
+and treat values as constant throughout
+the program.   */
+
+
+
+
+ /*
+let arr =["a", "b", "c"]as const;
+
+//arr.push("d")   // Read only show error
+
+const obj={
+    name: "Cost ",
+    value:"Read only "
+}as const;
+console.log(obj)
+
+//obj.name="Changed"    // Read only show error
+*/
+
+
+
+/*----------🔥🔥🔥🔥🐱‍🏍🔥🔥🔥--------- */
+
+
+
+ 
