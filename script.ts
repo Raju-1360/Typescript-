@@ -12,6 +12,10 @@ write versatile and type-safe code that
 accommodates a wide range of data
 types   */
 
+
+
+/*    🔥Code Start🔥    
+
 interface  Box <T>{
     value:T;
 };
@@ -48,4 +52,13 @@ const result :Result<String, number> ={
     name:"Coder",
     age :41
 }
-console.log(result)
+console.log(result)        
+
+
+
+End */
+
+
+/*--------------------------------------*/
+
+
