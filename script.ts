@@ -404,3 +404,108 @@ type user={
   user1.address?.street?console.log("street info"):console.log("data is not available")
  END HERE */
 
+//! Utility types
+
+/* 
+Utility types in TypeScript provide ways to transform and manipulate types. 
+The most commonly used TypeScript utility types are:
+
+1. **`Partial<T>`** - Makes all properties of `T` optional.
+2. **`Required<T>`** - Makes all properties of `T` required.
+3. **`Readonly<T>`** - Makes all properties of `T` read-only.
+4. **`Pick<T, K>`** - Selects a subset of properties from `T`.
+5. **`Omit<T, K>`** - Removes a subset of properties from `T`.
+6. **`Record<K, T>`** - Creates an object type with keys `K` and values `T`.
+7. **`Exclude<T, U>`** - Excludes types from `T` that are assignable to `U`.
+8. **`Extract<T, U>`** - Extracts types from `T` that are assignable to `U`.
+9. **`NonNullable<T>`** - Excludes `null` and `undefined` from `T`.
+10. **`ReturnType<T>`** - Gets the return type of a function `T`.
+
+*/
+
+
+
+interface Unit{
+    name : string,
+
+    age :number
+
+}
+const user1 :Partial<Unit>={
+    name :"John",
+
+
+}
+
+
+
+interface unit{
+    name ?: string,
+    age? :number
+}
+const user2:Required<unit>={
+    name:"john",
+  age:30
+}
+console.log(user2.name)
+const user3 :Readonly<unit>={
+    name:"root",
+  age:30
+}
+
+console.log(user3.name)
+
+type user4=Pick<unit, "name">
+const user5 :user4={
+    name:"pick"
+}
+console.log(user5.name)
+
+
+type user5=Omit<unit, "age">
+const user6 :user5={
+
+    name:"omit"
+}
+    console.log(user6.name)
+
+
+
+    type Numbers =2|3|4|5|6;
+    type EvenNumbers = Extract<Numbers,2|4|6>;
+    const num :EvenNumbers=4;
+    console.log(num)
+
+    type OddNumbers =Exclude<Numbers,2|4|6>;
+    const num2 :OddNumbers=3;
+    console.log(num2)
+
+
+    type NullableString =string |null| undefined;
+    
+
+    const zero:NonNullable<NullableString>="coder"
+    console.log(zero)
+
+
+    type grades ="Math"|"science"|"English"
+    type student =Record<grades, number>
+    const score :student={
+        Math:85,
+        science:90,
+        English:95
+    }
+
+    console.log(score.science)
+
+    function getUser(id:number){
+        return {id:id, name:"John", age:30}
+    }
+
+    type UserType =ReturnType<typeof getUser>
+    const user:UserType={
+        id:1,
+        name:"John",
+        age:30
+    }
+    console.log(user)
