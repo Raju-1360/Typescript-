@@ -256,3 +256,37 @@ Generating optional versions of types.
 Modifying property types in bulk.
 
     */
+   
+
+//!Enum 
+/*  enums are defined to create a set of named constants, providing a way to represent a collection of related values. They can be numeric or string-based and offer type safety and 
+optional reverse mapping for numeric enums
+
+Numeric Enums:
+ Automatically assign incremental values unless explicitly set.
+Reverse mapping
+ String Enums: Require you to assign specific string values manually
+ No Reverse Mapping
+
+*/
+/*    CODE START HERE
+
+enum Direction {
+    Up = 1,
+    Down,
+    Left,
+    Right
+  }
+  
+  console.log(Direction.Right)
+
+  enum colors{
+    red ="REd",
+    Blue="Blue",
+    green="Green",
+
+  }
+  console.log(colors.green)
+ 
+
+  */
