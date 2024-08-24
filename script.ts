@@ -156,5 +156,36 @@ console.log(obj)
 /*----------🔥🔥🔥🔥🐱‍🏍🔥🔥🔥--------- */
 
 
+//!Aliases 
 
- 
+/*Type aliases allow you to create custom
+names for types, improving code
+readability and reusability.
+They provide a way to define a type once
+and reuse it throughout our codebase     */
+
+
+
+/* CODE  START HERE
+type Numbers=number |string;
+
+let num1 : Numbers = 45;
+ console.log(num1)
+ let num2 : Numbers = 405;
+ console.log(num2)
+
+
+ type Point={
+    x:number,
+    y?:number
+
+ }
+ const one:Point={
+    x:45
+ }
+ console.log(one)
+
+
+     END HERE */
+
+     
