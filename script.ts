@@ -368,3 +368,39 @@ if(person instanceof Object){
     console.log(mydog);
 makeSound(mydog);    
   END   */
+
+
+  // !Nullish coalescing operator
+  /* CODE START HERE
+  let sum:number=4;
+
+  let sum2:string ="four "
+
+  sum ? console.log("true") : console.log("false");
+  !sum ? console.log("true") : console.log("false");
+  sum2 && sum ? console.log("true") : console.log("false");
+
+type Address={
+    street:string,
+    city?:string,
+    state?:string,
+    zip?:string,
+ 
+}
+type user={
+    name :string,
+    age?:number,
+    address?:Address
+  
+  }
+
+  const user1: user={
+    name :"John",
+    age :30,
+    address:{ street:" chd"}
+    
+  }
+
+  user1.address?.street?console.log("street info"):console.log("data is not available")
+ END HERE */
+
