@@ -188,4 +188,71 @@ let num1 : Numbers = 45;
 
      END HERE */
 
+
+
+     //! Index in Ts 
+
+     /* an index refers to how objects or arrays are accessed using a key or a numeric index
+     there are main two way to  access 
+     1.Index Operators ([]): Used to access elements within arrays or objects.
+2.Index Signatures ([key: type]: valueType): Define the structure of an object where the keys are dynamically determined,
+but their types are predefined.
      
+ 
+     */
+
+
+
+
+/*    CODE HERE
+let arr:number[]=[1,2,3,4];
+console.log(arr[0])
+
+let Obj :any ={ name :"Index", checked :true};
+console.log(Obj["name"]);
+
+
+interface Str_index{
+    [index:number]:string;
+}
+const str:Str_index={
+    0 :"Hello",
+    1 :"World",
+    2 :"TypeScript"
+
+}
+console.log(str[2])
+
+   END HERE */
+
+
+   //! Mapped Types:-
+   /*
+   Mapped Types allow you to take an existing type or interface and 
+   create a new type by transforming each property in some way. This is especially useful when you need variations of the same structure (e.g., making all properties optional, readonly, or changing their types).
+   
+   */
+
+   /*  CODE  START  HERE
+   interface User {
+    name :string,
+    age :number
+   }
+    type readonlyUser ={
+        readonly[ p in keyof User]:User[p];
+    }
+
+    const user1 :readonlyUser={
+        name :"John",
+        age :30
+    };
+    console.log(user1)     END HERE */
+
+    /* 
+    Common Use Cases:
+
+Creating readonly versions of types.
+Generating optional versions of types.
+Modifying property types in bulk.
+
+    */
